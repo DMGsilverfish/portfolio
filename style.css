@@ -79,8 +79,9 @@ header {
 .card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.5s ease;
+  background-color: black;
 }
 
 .card:hover img {
@@ -450,4 +451,60 @@ iframe {
 
 .education-card:hover {
     transform: translateY(-5px);
+}
+
+
+/* 
+
+  Contact section
+
+*/
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  justify-content: center; /* center vertically if height set */
+  min-height: 300px; /* optional, makes section taller */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+
+.contact-card {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center; /* center content inside */
+  color: #fff;
+  background-color: #1e1e2f;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-card a {
+  color: #a855f7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: #d8b4fe;
+  text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.contact h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    
 }
