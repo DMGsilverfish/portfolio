@@ -400,3 +400,54 @@ iframe {
   font-size: 1rem;
   line-height: 1.2;
 }
+
+/*
+
+  Education section
+
+*/
+
+.education {
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 80px; /* Padding so it doesn't touch bottom of page */
+}
+
+.education h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    
+}
+
+.education-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Makes them stack on small screens */
+}
+
+.education-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    flex: 1 1 300px;
+    text-align: left;
+    line-height: 1.6;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.education-card h3 {
+    margin-bottom: 5px;
+    color: white;
+}
+
+.education-card p {
+    margin: 8px 0;
+    color: #ddd;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+}
