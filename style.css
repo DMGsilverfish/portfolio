@@ -1,0 +1,402 @@
+body {
+    margin: 0;
+    font-family: monospace;
+    background-color: #111;
+    color: white;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    padding-top: 80px; /* Moves text down a bit */
+    height: auto;
+}
+
+.typing {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white; /* Cursor */
+    font-size: 2rem;
+    animation: typing 3s steps(23, end) forwards, blink 0.6s step-end infinite 3s;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 23ch; }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+}
+
+/* Vertical rounded border stripe */
+.border-stripe {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 500px;
+    height: calc(120px + 2.5rem); /* 80px padding + text height */
+    background: linear-gradient(to bottom, #a855f7, #6b21a8); /* Purple gradient */
+    border-radius: 10px;
+    z-index: -1; /* Behind the text */
+}
+
+/* Websites container */
+.websites-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: flex-start; /* align tops */
+  gap: 2rem; /* spacing between cards */
+  flex-wrap: wrap; /* stack only on small screens */
+}
+
+/* Card */
+.card {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(315deg, #a855f7, #6b21a8);
+  border-radius: 12px;
+  padding: 4px; /* This creates space for the border */
+  box-sizing: border-box; /* Ensures padding is included in width/height */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 8px;
+  overflow: hidden; /* Contains the image */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05); /* More subtle zoom instead of moving up */
+  opacity: 0.9;
+}
+
+.card .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  z-index: 10;
+}
+
+.card:hover .content {
+  transform: translateY(0);
+}
+
+/* Title styling */
+.content .title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.content .title span {
+  font-weight: 300;
+  font-size: 0.75em;
+}
+
+/* Center the header */
+.text-center {
+  text-align: center;
+}
+
+.text-3xl {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-white {
+  color: white;
+}
+
+.mb-8 {
+  margin-bottom: 2rem; /* 32px */
+}
+
+
+/* Buttons */
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Button styling - from Uiverse.io */
+.button {
+  position: relative;
+  width: 100px;
+  height: 38px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 10px;
+  
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -2px;
+  top: -2px;
+  margin: auto;
+  width: calc(100% + 4px); /* matches button width + border */
+  height: calc(100% + 4px);
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.button:hover::after {
+  filter: blur(30px);
+}
+
+.button:hover::before {
+  transform: rotate(-180deg);
+}
+
+.button:active::before {
+  scale: 0.7;
+}
+
+/* Make anchor tags look like buttons */
+.buttons a.button {
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Optional: Add hover effect to Preview button */
+.buttons button.button {
+  transition: all 0.3s ease;
+}
+.buttons button.button:hover {
+  background-color: #333;
+}
+
+
+/* card preview */
+.preview-container {
+  display: none;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.preview-card {
+  position: relative;
+  width: 400px;
+  height: 750px;
+  background: linear-gradient(315deg, #a855f7, #6b21a8);
+  border-radius: 12px;
+  padding: 4px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.preview-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.preview-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  isolation: isolate;;
+}
+
+/* Add this to prevent style leakage */
+iframe {
+  color-scheme: light;
+  background: white !important;
+}
+
+.close-preview {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.close-preview:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+.info-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0 15px;
+  border-radius: 0 0 8px 8px;
+  margin-top: 0;
+  border-top: 1px solid #ccc;
+}
+
+.info-content.open {
+  max-height: 300px;
+  padding: 10px 15px;
+}
+
+.info-content ul {
+  margin: 0;
+  padding-left: 20px;
+  color: white;
+  font-size: 0.85rem;
+}
+
+
+
+/* 
+
+      Technologies and tools used
+
+*/
+.technologies {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: white;
+  font-family: monospace;
+  position: relative;
+  margin-top: 40px;;
+}
+
+.technologies h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.8rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.tech-card {
+  background: rgba(255 255 255 / 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 8px rgb(255 255 255 / 0.1);
+
+  /* fix size for all cards */
+  width: 140px;
+  height: 160px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* vertically center content */
+  text-align: center;
+}
+
+.tech-card:hover {
+  background: linear-gradient(135deg, #a855f7, #6b21a8);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgb(168 85 247 / 0.6);
+}
+
+.tech-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 0.8rem;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+.tech-name {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+}

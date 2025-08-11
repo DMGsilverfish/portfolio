@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Gibson Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: monospace;
+            background-color: #111;
+            color: white;
+            position: relative;
+        }
+
+    header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px; /* Reserve vertical space for header */
+    position: relative; /* Needed for absolute child positioning */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.border-stripe {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    padding: 20px 0;
+    background: linear-gradient(to bottom, #a855f7, #6b21a8);
+    border-radius: 10px;
+    z-index: 1000; /* Add this */
+}
+
+.typing {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    font-size: 2rem;
+    animation: typing 3s steps(23, end) forwards,
+               blink 0.6s step-end infinite 3s;
+    margin-bottom: 5px;
+}
+
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 23ch; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+
+        
+
+        
+.social-links {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.3rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: iconAppear 0.4s ease forwards;
+    cursor: pointer;          /* Add this */
+    pointer-events: auto;     /* Make sure clicks are possible */
+}
+/* Animate each icon one after another */
+.social-link:nth-child(1) { animation-delay: 3.2s; }
+.social-link:nth-child(2) { animation-delay: 3.6s; }
+.social-link:nth-child(3) { animation-delay: 4s; }
+.social-link:nth-child(4) { animation-delay: 4.4s; }
+
+
+@keyframes iconAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #a855f7, #6b21a8);
+    transform: translateY(-3px);
+}
+    </style>
+</head>
+<body>
+    <header>
+        
+        <div class="border-stripe">
+            <div class="header-content">
+                <h1 class="typing">Daniel Gibson Portfolio</h1>
+                <div class="social-links">
+                    <!-- Email (copy to clipboard) -->
+                    <a href="mailto:danielgibson.pe@gmail.com" class="social-link" title="Send Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                    
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/daniel-gibson-8840b8274/" target="_blank" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    
+                    <!-- GitHub -->
+                    <a href="https://github.com/DMGsilverfish" target="_blank" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <!-- CV Download -->
+                    <a href="Daniel Gibson - CV.pdf" download class="social-link" title="Download CV">
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="websites py-10">
+        <h2 class="text-center text-3xl font-bold text-white mb-8">My Live Projects</h2>
+        
+        <div class="websites-container">
+            
+            <!-- Algoa Vehicle Traders -->
+            <div class="card">
+                <div class="card-inner">
+                    <img src="AVT_Screenshot.png" alt="Algoa Vehicle Traders">
+                    <div class="content">
+                    <p class="title">Algoa Vehicle Traders<br><span>Vehicle Trading Platform</span></p>
+                        <div class="buttons">
+                            <button class="button preview-btn" data-url="https://algoavehicletraders.co.za">Preview</button>
+                            <button class="button visit-button" data-url="https://www.algoavehicletraders.co.za">Visit</button>
+                            <button class="button info-btn">Info</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-content">
+                    <ul>
+                        <li>Built with ASP.NET Core MVC</li>
+                        <li>Responsive design for all devices</li>
+                        <li>Email SMTP</li>
+                        <li>CRUD for each vehicle type</li>
+                        <li>Reports for Admins</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RectifyIt -->
+            <div class="card">
+                <div class="card-inner">
+                    <img src="RectifyIt_Screenshot.png" alt="RectifyIt">
+                    <div class="content">
+                    <p class="title">RectifyIt<br><span>Customer to Owner communication</span></p>
+                        <div class="buttons">
+                            <button  class="button preview-btn" data-url="https://rectifyit.co.za">Preview</button>
+                            <button class="button visit-button" data-url="https://www.rectifyit.co.za">Visit</button>
+                            <button class="button info-btn">Info</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-content">
+                    <ul>
+                        <li>Built with ASP.NET Core MVC</li>
+                        <li>Responsive design for all devices</li>
+                        <li>Email SMTP and WhatsApp</li>
+                        <li>QR Code generation</li>
+                        <li>CRUD for business owners</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Preview Container (initially hidden) -->
+        <div class="preview-container" id="previewContainer"></div>
+    </section>
+
+    <section class="technologies py-10">
+        <h2>Technologies & Tools</h2>
+        <div class="tech-grid">
+            <!-- Each tech block -->
+            <a href="https://dotnet.microsoft.com/" target="_blank" rel="noopener noreferrer" class="tech-card" title="ASP.NET Core">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg" alt="ASP.NET Logo" width="80" height="80" />
+                <div class="tech-name">ASP.NET Core 6.0 - 9.0</div>
+            </a>
+
+
+            <a href="https://angular.io" target="_blank" class="tech-card" title="Angular">
+            <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" />
+            <div class="tech-name">Angular 20</div>
+            </a>
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="tech-card" title="HTML5">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5 Logo" />
+            <div class="tech-name">HTML5</div>
+            </a>
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="tech-card" title="CSS3">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3 Logo" />
+            <div class="tech-name">CSS3</div>
+            </a>
+
+            <a href="https://getbootstrap.com/" target="_blank" class="tech-card" title="Bootstrap 5">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap Logo" />
+            <div class="tech-name">Bootstrap 5</div>
+            </a>
+
+            <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" class="tech-card" title="C#">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="C# Logo" width="80" height="80" />
+                <div class="tech-name">C#</div>
+            </a>
+
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="tech-card" title="JavaScript">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript Logo" />
+            <div class="tech-name">JavaScript</div>
+            </a>
+
+            <a href="https://www.python.org/" target="_blank" class="tech-card" title="Python">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python Logo" />
+            <div class="tech-name">Python</div>
+            </a>
+
+            <a href="https://learn.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/" target="_blank" class="tech-card" title="LINQ">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="LINQ Logo" width="80" height="80" />
+                <div class="tech-name">LINQ</div>
+            </a>
+
+            <a href="https://www.mysql.com/" target="_blank" class="tech-card" title="SQL">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="SQL Logo" width="80" height="80" />
+                <div class="tech-name">SQL</div>
+            </a>
+
+        </div>
+</section>
+
+<section class="education py-10">
+    <h1>Education</h1>
+
+
+</section>
+
+
+
+
+<script>
+  document.querySelectorAll('.visit-button').forEach(button => {
+    button.addEventListener('click', () => {
+      window.open(button.dataset.url, '_blank', 'noopener,noreferrer');
+    });
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const previewContainer = document.getElementById('previewContainer');
+  let currentPreview = null;
+
+  // Handle preview button clicks
+  document.querySelectorAll('.preview-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const url = this.dataset.url;
+      
+      // If clicking the same preview, close it
+      if (currentPreview === url) {
+        closePreview();
+        return;
+      }
+      
+      // Create or update preview
+      currentPreview = url;
+      previewContainer.innerHTML = `
+        <div class="preview-card">
+            <div class="preview-card-inner">
+            <button class="close-preview">×</button>
+            <iframe src="${url}" class="preview-iframe" 
+                    loading="lazy"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                    allow="fullscreen"
+                    style="background: white !important;"></iframe>
+            </div>
+        </div>
+      `;
+      
+      previewContainer.style.display = 'block';
+      
+      // Add close button event
+      previewContainer.querySelector('.close-preview').addEventListener('click', closePreview);
+    });
+  });
+
+  // Handle visit button clicks
+  document.querySelectorAll('.visit-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      window.open(this.dataset.url, '_blank', 'noopener,noreferrer');
+    });
+  });
+
+  // Close preview function
+  function closePreview() {
+    previewContainer.style.display = 'none';
+    previewContainer.innerHTML = '';
+    currentPreview = null;
+  }
+});
+
+
+document.querySelectorAll('.info-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const card = button.closest('.card');
+        const infoContent = card.querySelector('.info-content');
+        infoContent.classList.toggle('open');
+    });
+});
+
+
+</script>
+</body>
+</html>
