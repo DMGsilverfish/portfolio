@@ -581,3 +581,17 @@ iframe {
     margin-bottom: 30px;
     
 }
+
+ /* 
+ 
+  Footer 
+
+ */
+
+
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
