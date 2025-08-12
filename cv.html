@@ -6,123 +6,15 @@
     <title>Daniel Gibson Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: monospace;
-            background-color: #111;
-            color: white;
-            position: relative;
-        }
-
-    header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 160px; /* Reserve vertical space for header */
-    position: relative; /* Needed for absolute child positioning */
-}
-
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.border-stripe {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 500px;
-    padding: 20px 0;
-    background: linear-gradient(to bottom, #a855f7, #6b21a8);
-    border-radius: 10px;
-    z-index: 1000; /* Add this */
-}
-
-.typing {
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid white;
-    font-size: 2rem;
-    animation: typing 3s steps(23, end) forwards,
-               blink 0.6s step-end infinite 3s;
-    margin-bottom: 5px;
-}
-
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 23ch; }
-        }
-
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
-        }
-
-        
-
-        
-.social-links {
-    display: flex;
-    gap: 20px;
-    overflow: hidden;
-}
-
-.social-link {
-    color: white;
-    font-size: 1.3rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    transform: translateY(10px);
-    animation: iconAppear 0.4s ease forwards;
-    cursor: pointer;          /* Add this */
-    pointer-events: auto;     /* Make sure clicks are possible */
-}
-/* Animate each icon one after another */
-.social-link:nth-child(1) { animation-delay: 3.2s; }
-.social-link:nth-child(2) { animation-delay: 3.6s; }
-.social-link:nth-child(3) { animation-delay: 4s; }
-.social-link:nth-child(4) { animation-delay: 4.4s; }
-.social-link:nth-child(4) { animation-delay: 4.4s; }
-.social-link:nth-child(5) { animation-delay: 4.8s; }
-
-
-@keyframes iconAppear {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.social-link:hover {
-    background: linear-gradient(135deg, #a855f7, #6b21a8);
-    transform: translateY(-3px);
-}
-    </style>
 </head>
 <body>
-    <header>
-        
+    <header>     
         <div class="border-stripe">
             <div class="header-content">
                 <h1 class="typing">Daniel Gibson Portfolio</h1>
+                <h2 class="typing2">Software / Web Developer</h2>
                 <div class="social-links">
-                    <!-- Email (copy to clipboard) -->
+                    
                     <a href="mailto:danielgibson.pe@gmail.com" class="social-link" title="Send Email">
                         <i class="fas fa-envelope"></i>
                     </a>
@@ -172,9 +64,9 @@
                     <ul>
                         <li>Built with ASP.NET Core MVC</li>
                         <li>Responsive design for all devices</li>
-                        <li>Email SMTP</li>
                         <li>CRUD for each vehicle type</li>
                         <li>Reports for Admins</li>
+                        <li>Adjusted image quality and rotation using metadata</li>
                     </ul>
                 </div>
             </div>
@@ -305,10 +197,10 @@
   <div class="contact-card">
     <p><strong>Email:</strong> <a href="mailto:danielgibson.pe@gmail.com" class="email-link">danielgibson.pe@gmail.com</a></p>
     <p><strong>Phone:</strong> <a href="https://wa.me/27827508647" target="_blank" rel="noopener noreferrer" style="color:#a855f7; text-decoration:none;">+27 082 750 8647</a></p>
-
+    <p><strong>City:</strong> Port Elizabeth / Gqeberha</p>
     
     <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem;">
-      <!-- Email (copy to clipboard) -->
+        <!-- Email -->
       <a href="mailto:danielgibson.pe@gmail.com" title="Send Email" style="color: #a855f7; font-size: 1.8rem; transition: color 0.3s ease;" onmouseover="this.style.color='#d8b4fe'" onmouseout="this.style.color='#a855f7'">
         <i class="fas fa-envelope"></i>
       </a>

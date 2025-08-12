@@ -1,50 +1,123 @@
-body {
-    margin: 0;
-    font-family: monospace;
-    background-color: #111;
-    color: white;
-    position: relative;
-}
+        body {
+            margin: 0;
+            font-family: monospace;
+            background-color: #111;
+            color: white;
+            position: relative;
+        }
 
-header {
+    header {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align to top */
-    padding-top: 80px; /* Moves text down a bit */
-    height: auto;
+    align-items: center;
+    height: 160px; /* Reserve vertical space for header */
+    position: relative; /* Needed for absolute child positioning */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.border-stripe {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    padding: 20px 0;
+    background: linear-gradient(to bottom, #a855f7, #6b21a8);
+    border-radius: 10px;
+    z-index: 1000; /* Add this */
 }
 
 .typing {
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid white; /* Cursor */
+    border-right: 3px solid white;
     font-size: 2rem;
-    animation: typing 3s steps(23, end) forwards, blink 0.6s step-end infinite 3s;
+    animation: typing 3s steps(23, end) forwards,
+               blink 0.6s step-end infinite 3s;
+    margin-bottom: 5px;
 }
 
-/* Typing effect */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 23ch; }
+.typing2 {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    font-size: 1.4rem;
+    animation: typing2 2.5s steps(25, end) forwards,
+               blink 0.6s step-end infinite 5.5s;
+    margin-bottom: 10px;
 }
 
-/* Blinking cursor */
-@keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: white; }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 23ch; }
+        }
+
+        @keyframes typing2 {
+            from { width: 0; }
+            to { width: 24ch; } /* Adjust to match text length */
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+
+        
+
+        
+.social-links {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
 }
 
-/* Vertical rounded border stripe */
-.border-stripe {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    width: 500px;
-    height: calc(120px + 2.5rem); /* 80px padding + text height */
-    background: linear-gradient(to bottom, #a855f7, #6b21a8); /* Purple gradient */
-    border-radius: 10px;
-    z-index: -1; /* Behind the text */
+.social-link {
+    color: white;
+    font-size: 1.3rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: iconAppear 0.4s ease forwards;
+    cursor: pointer;          /* Add this */
+    pointer-events: auto;     /* Make sure clicks are possible */
+}
+/* Animate each icon one after another */
+.social-link:nth-child(1) { animation-delay: 3.2s; }
+.social-link:nth-child(2) { animation-delay: 3.6s; }
+.social-link:nth-child(3) { animation-delay: 4s; }
+.social-link:nth-child(4) { animation-delay: 4.4s; }
+.social-link:nth-child(4) { animation-delay: 4.4s; }
+.social-link:nth-child(5) { animation-delay: 4.8s; }
+
+
+@keyframes iconAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #a855f7, #6b21a8);
+    transform: translateY(-3px);
 }
 
 /* Websites container */
