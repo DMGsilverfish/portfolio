@@ -13,7 +13,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>     
+    <header> 
+        <!-- Add this to your HTML file, e.g. index.html -->
+        <button id="modeToggle" style="position:fixed;top:20px;right:20px;z-index:2000;padding:0;border:none;background:none;box-shadow:none;cursor:pointer;">
+            <img src="sun.png" alt="Light Mode" style="width:24px;height:24px;vertical-align:middle;">
+        </button>
+        <link id="themeStylesheet" rel="stylesheet" href="style.css">  
         <div class="border-stripe">
             <div class="header-content">
                 <h1 class="typing">Daniel Gibson Portfolio</h1>

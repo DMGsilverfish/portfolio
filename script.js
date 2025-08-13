@@ -67,3 +67,21 @@ document.querySelectorAll('.info-btn').forEach(button => {
     infoContent.classList.toggle('open');
   });
 });
+
+
+// Dark mode toggle
+const toggleBtn = document.getElementById('modeToggle');
+const themeLink = document.getElementById('themeStylesheet');
+let isLight = false;
+
+toggleBtn.onclick = function() {
+    if (!isLight) {
+        themeLink.href = "StyleLightMode.css";
+        toggleBtn.innerHTML = `<img src="half-moon.png" alt="Dark Mode" style="width:24px;height:24px;vertical-align:middle;">`;
+        isLight = true;
+    } else {
+        themeLink.href = "style.css";
+        toggleBtn.innerHTML = `<img src="sun.png" alt="Light Mode" style="width:24px;height:24px;vertical-align:middle;">`;
+        isLight = false;
+    }
+};

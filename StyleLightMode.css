@@ -1,0 +1,133 @@
+body {
+    background-color: #f8f8fa;
+    color: #6b21a8;
+}
+
+header {
+    background: none;
+}
+
+.border-stripe {
+    background: linear-gradient(to bottom, #d1c4e9, #b39ddb); /* lighter purple gradient */
+    color: #6b21a8;
+}
+
+.typing, .typing2 {
+    color: #6b21a8;
+    border-right: 3px solid #222;
+}
+
+.social-link {
+    background: rgba(0,0,0,0.05);
+    color: #6b21a8;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #a855f7, #6b21a8);
+    color: #fff;
+}
+
+/* Websites container */
+.websites-container {
+    background: none;
+}
+
+/* Card */
+.card {
+    background: linear-gradient(315deg, #ede7f6, #d1c4e9); /* light purple gradient */
+    color: #222;
+}
+
+.card-inner {
+    background: rgba(255,255,255,0.95);
+}
+
+.card img {
+    background-color: #fff;
+}
+
+.card .content {
+    background: rgba(240,240,240,0.85);
+    color: #222;
+}
+
+/* Tech cards */
+.tech-card {
+    background: #e0e0e0;
+    color: #222;
+    box-shadow: 0 0 8px rgb(0 0 0 / 0.05);
+}
+
+.tech-card:hover {
+    background: linear-gradient(135deg, #a855f7, #6b21a8);
+    color: #fff;
+    box-shadow: 0 8px 15px rgb(168 85 247 / 0.2);
+}
+
+/* Education section */
+.education-card {
+    background: #e0e0e0;
+    color: #222;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.education-card h3 {
+    color: #6b21a8;
+}
+
+.education-card p {
+    color: #333;
+}
+
+/* Contact section */
+.contact-card {
+    background-color: #e0e0e0; /* Match education-card */
+    color: #222;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.contact-card a {
+    color: #6b21a8;
+}
+
+.contact-card a:hover {
+    color: #a855f7;
+}
+
+/* Footer */
+.site-footer {
+    background: #e0e0e0;
+    color: #222;
+}
+
+/* Buttons */
+.button {
+    background-color: #fff;
+    color: #6b21a8;
+}
+
+.button:hover {
+    background-color: #ede7f6;
+    color: #6b21a8;
+}
+
+/* Preview card */
+.preview-card {
+    background: linear-gradient(315deg, #ede7f6, #d1c4e9);
+    color: #222;
+}
+
+.preview-card-inner {
+    background: #fff;
+}
+
+/* Info content */
+.info-content {
+    background: #f5f5f5;
+    color: #222;
+    border-top: 1px solid #bdbdbd;
+}
+
+.info-content ul {
+    color: #222;
+}
