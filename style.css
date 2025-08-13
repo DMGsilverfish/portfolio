@@ -1,4 +1,4 @@
-        body {
+body {
             margin: 0;
             font-family: monospace;
             background-color: #111;
@@ -31,10 +31,104 @@
     align-items: center;
     flex-direction: column;
     width: 500px;
+    max-width: 90%;
     padding: 20px 0;
     background: linear-gradient(to bottom, #a855f7, #6b21a8);
     border-radius: 10px;
     z-index: 1000; /* Add this */
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 10px 0;
+        
+    }
+
+    .border-stripe {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .typing {
+        font-size: 1.6rem !important;
+        border-right-width: 2px;
+        white-space: normal; /* Allow wrapping if needed */
+    }
+
+    .typing2 {
+        font-size: 1.2rem !important;
+        border-right-width: 2px;
+        white-space: normal;
+    }
+
+    .social-links {
+        gap: 15px;
+        flex-wrap: wrap; /* Allows icons to break into multiple rows */
+    }
+
+    .social-link {
+        font-size: 1.1rem;
+        width: 35px;
+        height: 35px;
+    }
+
+    header {
+        margin-bottom: 15px; /* Slightly bigger gap on small screens */
+    }
+}
+
+/* Small phone adjustments */
+@media (max-width: 480px) {
+
+  html, body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
+    .typing {
+        font-size: 1.4rem !important;
+    }
+
+    .typing2 {
+        font-size: 1rem !important;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-link {
+        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+    }
+
+    header {
+        margin-bottom: 15px; /* Ensure gap below header on mobile */
+        padding-bottom: 100px;
+    }
+
+    .websites-container,
+    .preview-container {
+        width: 90vw;
+        max-width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    
+
+    .card,
+    .preview-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
 }
 
 .typing {
