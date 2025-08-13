@@ -19,6 +19,7 @@
 A clean and animated personal portfolio website featuring:
 - **Typing animation** introducing my name and profession
 - **Animated social icons** with gradient hover effects
+- **Light and Dark mode** lets you choose the theme
 - **Direct contact links** for Email, WhatsApp, LinkedIn, GitHub, and downloadable CV
 - Showcases notable projects and achievements, such as:
   - Automobile website for buying and selling Cars, Bikes, Boats, Caravans and Trailers
