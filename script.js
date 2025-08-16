@@ -85,3 +85,94 @@ toggleBtn.onclick = function() {
         isLight = false;
     }
 };
+
+
+
+async function loadContributions() {
+    const token = "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"; // Replace with your token
+    const currentYear = new Date().getFullYear();
+    const startOfYear = `${currentYear}-01-01`;
+
+    const query = `
+    query {
+      user(login: "DMGsilverfish") {
+        contributionsCollection {
+          contributionCalendar {
+            weeks {
+              contributionDays {
+                color
+                date
+                contributionCount
+              }
+            }
+          }
+        }
+      }
+    }`;
+
+    const response = await fetch("https://api.github.com/graphql", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `bearer ${token}`
+        },
+        body: JSON.stringify({ query })
+    });
+
+    const { data } = await response.json();
+    let weeks = data.user.contributionsCollection.contributionCalendar.weeks;
+
+    // Filter out weeks that are entirely before the current year
+    weeks = weeks.filter(week =>
+        week.contributionDays.some(day => day.date >= startOfYear)
+    );
+
+    const container = document.getElementById("contrib-graph");
+
+    // Create month labels
+    const monthsRow = document.createElement("div");
+    monthsRow.classList.add("months-row");
+    let lastMonth = null;
+    weeks.forEach(week => {
+        const firstDay = week.contributionDays[0];
+        const monthName = new Date(firstDay.date).toLocaleString("default", { month: "short" });
+
+        if (firstDay.date >= startOfYear && monthName !== lastMonth) {
+            const monthLabel = document.createElement("div");
+            monthLabel.classList.add("month-label");
+            monthLabel.innerText = monthName;
+            monthsRow.appendChild(monthLabel);
+            lastMonth = monthName;
+        } else {
+            const spacer = document.createElement("div");
+            spacer.classList.add("month-spacer");
+            monthsRow.appendChild(spacer);
+        }
+    });
+    container.appendChild(monthsRow);
+
+    // Create contributions grid
+    const grid = document.createElement("div");
+    grid.classList.add("grid");
+
+    weeks.forEach(week => {
+        const weekDiv = document.createElement("div");
+        weekDiv.classList.add("week");
+
+        week.contributionDays.forEach(day => {
+            if (day.date >= startOfYear) {
+                const dayDiv = document.createElement("div");
+                dayDiv.classList.add("day");
+                dayDiv.style.backgroundColor = day.contributionCount > 0 ? day.color : "#888";
+                dayDiv.title = `${day.date}: ${day.contributionCount} contributions`;
+                weekDiv.appendChild(dayDiv);
+            }
+        });
+
+        grid.appendChild(weekDiv);
+    });
+
+    container.appendChild(grid);
+}
+
+document.addEventListener("DOMContentLoaded", loadContributions);

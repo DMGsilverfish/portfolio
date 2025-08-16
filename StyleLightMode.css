@@ -58,6 +58,10 @@ header {
     box-shadow: 0 0 8px rgb(0 0 0 / 0.05);
 }
 
+.technologies h2 {
+    color: #6b21a8;
+}
+
 .tech-card:hover {
     background: linear-gradient(135deg, #a855f7, #6b21a8);
     color: #fff;
@@ -130,4 +134,68 @@ header {
 
 .info-content ul {
     color: #222;
+}
+
+.github-container {
+    text-align: center;
+    max-width: 90%;  /* keeps it smaller on large screens */
+    margin: 0 auto;  /* centers horizontally */
+}
+
+/* Month labels row above the grid */
+.months-row {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-bottom: 5px;
+    font-size: 0.75rem;
+    color: #000; /* black text for light mode */
+}
+
+.month-label {
+    width: 12px;
+    text-align: center;
+}
+
+.month-spacer {
+    width: 12px;
+}
+
+/* Main contributions grid */
+.grid {
+    display: flex;
+    gap: 3px;
+    justify-content: center; /* center horizontally */
+    flex-wrap: wrap; /* makes it responsive for mobile */
+    margin-top: 1rem;
+}
+
+.week {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.day {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background-color: #fff; /* white instead of grey */
+    transition: transform 0.1s ease;
+}
+
+.day:hover {
+    transform: scale(1.2); /* small hover zoom */
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .day {
+        width: 8px;
+        height: 8px;
+    }
+
+    .month-label, .month-spacer {
+        width: 8px;
+    }
 }
